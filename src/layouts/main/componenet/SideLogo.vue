@@ -26,7 +26,6 @@ const logoUrl = new URL('@/assets/vue.svg', import.meta.url).href
   height: 60px;
   background-color: #ffffff;
   border-bottom: 1px solid #e5e7eb;
-  border-right: 1px solid #e5e7eb;
   box-sizing: border-box
 }
 
@@ -34,10 +33,12 @@ const logoUrl = new URL('@/assets/vue.svg', import.meta.url).href
   width: 30px;
   height: 30px;
   margin-right: 10px;
+  flex-shrink: 0;
 }
 .logo-img-collapse {
   width: 30px;
   height: 30px;
+  flex-shrink: 0;
 }
 
 .title {
@@ -45,11 +46,13 @@ const logoUrl = new URL('@/assets/vue.svg', import.meta.url).href
   font-weight: bold;
   margin-bottom: 5px;
   color: #333333;
+  white-space: nowrap;
 }
 
 .description {
   font-size: 12px;
   color: #666666;
+  white-space: nowrap;
 }
 
 </style>
