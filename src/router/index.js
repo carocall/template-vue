@@ -14,7 +14,7 @@ const routes = [
         component: MainLayout,
         children: [
             {
-                path: '/',
+                path: '',
                 component: Home,
                 meta: {
                     title: '首页',
