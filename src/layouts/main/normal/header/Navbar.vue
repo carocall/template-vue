@@ -1,6 +1,7 @@
 <script setup>
 import ExpandButton from "@/layouts/main/componenet/ExpandButton.vue";
 import UserAvatar from "@/layouts/main/componenet/UserAvatar.vue";
+import FullScreen from "@/layouts/main/componenet/FullScreen.vue";
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import UserAvatar from "@/layouts/main/componenet/UserAvatar.vue";
             </p>
         </div>
         <div class="flex-box">
+            <FullScreen/>
             <UserAvatar/>
         </div>
     </div>
