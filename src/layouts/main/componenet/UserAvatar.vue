@@ -5,9 +5,11 @@
 <template>
   <el-dropdown >
     <div class="flex-box">
-      <el-avatar
-          class="avatar" src="https://img2.baidu.com/it/u=3422222442,1928892222&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" />
-      <p>admin</p>
+      <el-avatar class="avatar" src="https://img2.baidu.com/it/u=3422222442,1928892222&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" />
+      <div>
+        <p class="name">欸嘿嘿</p>
+        <p class="job">[超级管理员]</p>
+      </div>
     </div>
     <template #dropdown>
       <el-dropdown-menu>
@@ -22,8 +24,7 @@
   </el-dropdown>
 </template>
 
-<style scoped>
-
+<style>
 .flex-box {
   display: flex;
   align-items: center;
@@ -35,4 +36,22 @@
   width: 35px;
   margin: 0 10px;
 }
+
+.name {
+  display: flex;
+  align-items: center;    /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #333333;
+}
+
+.job {
+  display: flex;
+  align-items: center;    /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+  font-size: 10px;
+  color: #808080;
+}
+
 </style>
