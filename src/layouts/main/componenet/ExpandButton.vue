@@ -13,7 +13,7 @@ const toggleCollapse = () => {
 
 <template>
   <el-button @click="toggleCollapse">
-    <el-icon v-if="!sidebarStore.isCollapse">
+    <el-icon v-if="sidebarStore.isCollapse">
       <Expand />
     </el-icon>
     <el-icon v-else><Fold /></el-icon>
