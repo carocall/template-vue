@@ -26,6 +26,7 @@ const logoUrl = new URL('@/assets/vue.svg', import.meta.url).href
   height: 60px;
   background-color: #ffffff;
   border-bottom: 1px solid #e5e7eb;
+  border-right: 1px solid #e5e7eb;
   box-sizing: border-box
 }
 
