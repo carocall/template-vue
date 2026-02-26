@@ -23,15 +23,6 @@
 </template>
 
 <style scoped>
-.navbar {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 15px;
-  background: #fff;
-  border-bottom: 1px solid #e5e7eb;
-}
 
 .flex-box {
   display: flex;
