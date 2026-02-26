@@ -59,6 +59,7 @@ const selectMenu = (key) => {
 <style>
 .side-menu {
   height: calc(100% - 60px);
+  border-right: none;
   /* 隐藏滚动条但保持滚动功能 */
   overflow-y: auto;
   scrollbar-width: none; /* Firefox */
