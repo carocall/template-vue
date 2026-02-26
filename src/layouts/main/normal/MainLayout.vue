@@ -4,7 +4,7 @@
             <Siderbar/>
             <el-container>
                 <el-header class="header"><Navbar/></el-header>
-                <el-main>
+                <el-main class="main">
                     <router-view></router-view>
                 </el-main>
             </el-container>
@@ -27,5 +27,9 @@ import Navbar from '@/layouts/main/normal/header/Navbar.vue'
 }
 .main-container {
     height: 100%;
+}
+.main{
+  margin: 0 ;
+  padding: 0 ;
 }
 </style>
