@@ -7,7 +7,7 @@ function handleLinkClick(link) {
 <template>
   <i
       class="function-button"
-      @click="handleLinkClick('https://gitee.com/call-caro/template-vue')"
+      @click="handleLinkClick('https://github.com/carocall/template-vue.git')"
   >
     <img src="@/assets/icon/github.svg" class="icon-img" alt="github">
   </i>
