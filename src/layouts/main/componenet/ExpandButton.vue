@@ -1,7 +1,6 @@
 <script setup>
 
-import {  Expand } from '@element-plus/icons-vue';
-
+import {  Expand, Fold } from '@element-plus/icons-vue';
 import { useSiderbarStore } from '@/stores/siderbar.js'
 
 const sidebarStore = useSiderbarStore()
@@ -14,9 +13,10 @@ const toggleCollapse = () => {
 
 <template>
   <el-button @click="toggleCollapse">
-    <el-icon>
+    <el-icon v-if="!sidebarStore.isCollapse">
       <Expand />
     </el-icon>
+    <el-icon v-else><Fold /></el-icon>
   </el-button>
 </template>
 
