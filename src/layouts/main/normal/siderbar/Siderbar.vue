@@ -21,6 +21,7 @@ const sidebarStore = useSiderbarStore()
   height: 100%;
   background: #fff;
   border-right: 1px solid #e5e7eb;
+  overflow-x: hidden;
   box-sizing: border-box;
   transition: width 0.3s ease;
 }
