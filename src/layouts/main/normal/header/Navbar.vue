@@ -2,6 +2,7 @@
 import ExpandButton from "@/layouts/main/componenet/ExpandButton.vue";
 import UserAvatar from "@/layouts/main/componenet/UserAvatar.vue";
 import FullScreen from "@/layouts/main/componenet/FullScreen.vue";
+import GiteeIcon from "@/layouts/main/componenet/GiteeIcon.vue";
 </script>
 
 <template>
@@ -13,6 +14,7 @@ import FullScreen from "@/layouts/main/componenet/FullScreen.vue";
             </p>
         </div>
         <div class="flex-box">
+          <GiteeIcon/>
             <FullScreen/>
             <UserAvatar/>
         </div>
