@@ -4,19 +4,18 @@ import UserAvatar from "@/layouts/main/componenet/UserAvatar.vue";
 import FullScreen from "@/layouts/main/componenet/FullScreen.vue";
 import GiteeIcon from "@/layouts/main/componenet/GiteeIcon.vue";
 import GithubIcon from "@/layouts/main/componenet/GithubIcon.vue";
+import Breadcrumb from "@/layouts/main/componenet/Breadcrumb.vue";
 </script>
 
 <template>
     <div class="navbar">
         <div class="flex-box">
             <ExpandButton/>
-            <p class="page-title">
-                首页
-            </p>
+            <Breadcrumb/>
         </div>
         <div class="flex-box">
-          <GithubIcon/>
-          <GiteeIcon/>
+            <GithubIcon/>
+            <GiteeIcon/>
             <FullScreen/>
             <UserAvatar/>
         </div>
