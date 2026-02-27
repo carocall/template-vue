@@ -6,12 +6,9 @@ const sidebarStore = useSiderbarStore()
 const logoUrl = new URL('@/assets/vue.svg', import.meta.url).href
 </script>
 <template>
-  <div class="brand"  v-if="sidebarStore.isCollapse">
-    <el-image :src="logoUrl" class="logo-img-collapse" alt="logo" />
-  </div>
-  <div class="brand" v-else>
+  <div class="brand">
     <el-image :src="logoUrl" class="logo-img" alt="logo" />
-    <div class="info-card">
+    <div class="info-card"  v-if="!sidebarStore.isCollapse">
       <h1 class="title">template Vue</h1>
       <p class="description">后台管理系统</p>
     </div>
@@ -28,14 +25,10 @@ const logoUrl = new URL('@/assets/vue.svg', import.meta.url).href
   border-bottom: 1px solid #e5e7eb;
   box-sizing: border-box
 }
-
-.logo-img {
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
-  flex-shrink: 0;
+.info-card {
+  margin-left: 10px;
 }
-.logo-img-collapse {
+.logo-img {
   width: 30px;
   height: 30px;
   flex-shrink: 0;
