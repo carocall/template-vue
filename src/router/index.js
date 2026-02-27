@@ -7,6 +7,7 @@ import Login from '@/views/auth/login/Login.vue'
 import Register from '@/views/auth/register/Register.vue'
 import AuthLayout from '@/layouts/auth/AuthLayout.vue'
 import Home from "@/views/home/Home.vue";
+import UserManage from "@/views/user/UserManage.vue";
 
 const routes = [
     {
@@ -34,6 +35,13 @@ const routes = [
                 component: Knowledge,
                 meta: {
                     title: '知识库',
+                    icon: 'Document',
+                }
+            },   {
+                path: 'user',
+                component: UserManage,
+                meta: {
+                    title: '用户管理',
                     icon: 'Document',
                 }
             },
