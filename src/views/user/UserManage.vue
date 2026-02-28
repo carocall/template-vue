@@ -1,6 +1,6 @@
 <script setup>
 import CommonPage from "@/components/common/CommonPage.vue";
-import { Plus, Search, Refresh, User, Key, Delete } from "@element-plus/icons-vue";
+import { Plus} from "@element-plus/icons-vue";
 import { ref } from 'vue';
 // 模拟用户数据
 const userList = [
