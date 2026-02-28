@@ -12,7 +12,7 @@ const toggleCollapse = () => {
 </script>
 
 <template>
-  <el-button @click="toggleCollapse">
+  <el-button class="expand-button" @click="toggleCollapse">
     <el-icon v-if="sidebarStore.isCollapse">
       <Expand />
     </el-icon>
@@ -21,5 +21,7 @@ const toggleCollapse = () => {
 </template>
 
 <style>
-
+.expand-button {
+    margin-right: 16px;
+}
 </style>
