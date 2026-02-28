@@ -4,15 +4,19 @@ import UserAvatar from "@/layouts/main/componenet/UserAvatar.vue";
 import FullScreen from "@/layouts/main/componenet/FullScreen.vue";
 import GiteeIcon from "@/layouts/main/componenet/GiteeIcon.vue";
 import GithubIcon from "@/layouts/main/componenet/GithubIcon.vue";
-import Breadcrumb from "@/layouts/main/componenet/Breadcrumb.vue";
+import AppTab from "@/layouts/main/componenet/AppTab.vue";
 </script>
 
 <template>
     <div class="navbar">
         <div class="content-box">
             <ExpandButton/>
-            <Breadcrumb/>
         </div>
+
+        <AppTab/>
+
+        <span class="separate">|</span>
+
         <div class="content-box">
             <GithubIcon/>
             <GiteeIcon/>
@@ -24,6 +28,12 @@ import Breadcrumb from "@/layouts/main/componenet/Breadcrumb.vue";
 </template>
 
 <style scoped lang="scss">
+
+.separate{
+    margin-left: 12px;
+    margin-right: 12px;
+    opacity: 0.2;
+}
 .navbar {
     height: 100%;
     display: flex;
