@@ -20,6 +20,7 @@ import Navbar from '@/layouts/main/normal/header/Navbar.vue'
 <style lang="scss" scoped>
 .common-layout {
     height: 100vh;
+    overflow: hidden;
 }
 
 .header {
