@@ -1,5 +1,6 @@
 <template>
     <div class="common-layout">
+        <LoadingProgressBar />
         <el-container class="main-container">
             <Siderbar/>
             <el-container>
@@ -19,6 +20,7 @@
 <script setup>
 import Siderbar from '@/layouts/main/normal/siderbar/Siderbar.vue'
 import Navbar from '@/layouts/main/normal/header/Navbar.vue'
+import LoadingProgressBar from '@/layouts/main/componenet/LoadingProgressBar.vue'
 </script>
 
 <style lang="scss" scoped>
