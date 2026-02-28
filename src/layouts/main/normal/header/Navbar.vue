@@ -9,11 +9,11 @@ import Breadcrumb from "@/layouts/main/componenet/Breadcrumb.vue";
 
 <template>
     <div class="navbar">
-        <div class="flex-box">
+        <div class="content-box">
             <ExpandButton/>
             <Breadcrumb/>
         </div>
-        <div class="flex-box">
+        <div class="content-box">
             <GithubIcon/>
             <GiteeIcon/>
             <FullScreen/>
@@ -34,10 +34,11 @@ import Breadcrumb from "@/layouts/main/componenet/Breadcrumb.vue";
     border-bottom: 1px solid #e5e7eb;
 }
 
-.flex-box {
+.content-box {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .page-title {
