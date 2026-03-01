@@ -118,6 +118,7 @@ onMounted(() => {
     transition: all 0.3s;
     font-size: 14px;
     color: #606266;
+    height: 20px;
 }
 
 .tab-item:hover {
