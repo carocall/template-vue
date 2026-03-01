@@ -15,7 +15,6 @@ import AppTab from "@/layouts/main/componenet/AppTab.vue";
 
         <AppTab/>
 
-        <span class="separate">|</span>
 
         <div class="content-box">
             <GithubIcon/>
