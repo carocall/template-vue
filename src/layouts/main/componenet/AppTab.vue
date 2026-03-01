@@ -7,6 +7,7 @@ const route = useRoute()
 const router = useRouter()
 
 const activeTab = ref('')
+const tabsContainer = ref(null)
 
 const tabs = ref([
     {name: '首页', id: '/', path: '/'}
@@ -48,6 +49,13 @@ const addTab = (routeItem) => {
     activeTab.value = title
 }
 
+const handleWheel = (event) => {
+    if (tabsContainer.value && event.deltaY !== 0) {
+        event.preventDefault()
+        tabsContainer.value.scrollLeft += event.deltaY
+    }
+}
+
 watch(() => route.path, (newPath) => {
     addTab(route)
 }, {immediate: true})
@@ -58,7 +66,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="custom-tabs">
+    <div ref="tabsContainer" class="custom-tabs" @wheel="handleWheel">
         <div
             v-for="tab in tabs"
             :key="tab.id"
@@ -82,13 +90,21 @@ onMounted(() => {
 .custom-tabs {
     flex: 1 1 0%; /* 关键属性：占据剩余空间 */
     min-width: 0; /* 允许内容收缩 */
-    overflow: hidden;
+    overflow-x: auto; /* 允许水平滚动 */
+    overflow-y: hidden; /* 隐藏垂直滚动 */
     display: flex;
     align-items: center;
+    scrollbar-width: none; /* Firefox 隐藏滚动条 */
+    -ms-overflow-style: none; /* IE 和 Edge 隐藏滚动条 */
 
     gap: 8px;
     padding: 8px;
     background: #fff;
+}
+
+/* Chrome、Safari 和 Opera 隐藏滚动条 */
+.custom-tabs::-webkit-scrollbar {
+    display: none;
 }
 
 .tab-item {
