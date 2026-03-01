@@ -50,7 +50,7 @@
   margin: 10px;
   background: #fff;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 2px;
   box-sizing: border-box;
 
   overflow: auto;
