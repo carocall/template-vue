@@ -18,7 +18,7 @@ const {isFullscreen,toggle} = useFullscreen()
   justify-content: center;
 }
 .function-button{
-  margin-right: 16px;
+    margin: 0 10px;
   cursor: pointer;
   height: 20px;
   width: 20px;

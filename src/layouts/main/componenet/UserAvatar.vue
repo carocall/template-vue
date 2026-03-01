@@ -37,6 +37,7 @@ import {SwitchButton, User} from "@element-plus/icons-vue";
 <style>
 .user-avatar {
   flex-shrink: 0;
+    margin: 0 10px;
 }
 .exit-button {
   color: #ff5959 !important;

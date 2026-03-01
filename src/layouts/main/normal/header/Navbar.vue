@@ -30,8 +30,7 @@ import AppTab from "@/layouts/main/componenet/AppTab.vue";
 <style scoped lang="scss">
 
 .separate{
-    margin-left: 12px;
-    margin-right: 12px;
+    margin: 0 10px;
     opacity: 0.2;
 }
 .navbar {
@@ -39,7 +38,7 @@ import AppTab from "@/layouts/main/componenet/AppTab.vue";
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 10px;
     background: #fff;
     border-bottom: 1px solid #e5e7eb;
 }
