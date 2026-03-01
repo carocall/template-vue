@@ -98,7 +98,6 @@ onMounted(() => {
     -ms-overflow-style: none; /* IE 和 Edge 隐藏滚动条 */
 
     gap: 8px;
-    padding: 8px;
     background: #fff;
 }
 
