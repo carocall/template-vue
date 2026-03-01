@@ -33,20 +33,7 @@
     <!-- 特性和技术栈 -->
     <div class="features-section">
       <div class="feature-card">
-        <div class="feature-header">
-          <h3>特点</h3>
-        </div>
-        <ul class="feature-list">
-          <li>基于Vue 3 | 技术栈: Vite + Vue3 + Pinia + Vue Router</li>
-          <li>组件库 | Element Plus，优雅、美观、功能丰富</li>
-          <li>响应式布局，根据不同屏幕尺寸自适应，美观简洁</li>
-          <li>先进的文件结构设计，多个模块之间低耦合，易于维护和扩展</li>
-          <li>扁平化路由设计，每一个组件都可以是一个页面，页面切换流畅</li>
-          <li>基于角色的权限控制，确保系统安全性</li>
-          <li>基于Element Plus的消息提示，支持批量操作和自定义配置</li>
-          <li>基于Element Plus封装的业务组件，包含 Page 组件、CRUD 表格组件，减少大量重复性工作</li>
-        </ul>
-
+         
       </div>
 
       <div class="tech-stack-card">
@@ -169,7 +156,7 @@ onMounted(() => {
 
 <style scoped>
 .home-container {
-  padding: 20px;
+  padding: 10px;
   background: #f5f7fa;
   min-height: 100vh;
 }
@@ -181,9 +168,9 @@ onMounted(() => {
   background-image: url('@/assets/image/Nahida.png');
   background-size: cover;
   background-position: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 2px;
 }
 
 .hero-section::before {
@@ -242,13 +229,13 @@ onMounted(() => {
 /* 欢迎区域 */
 .welcome-section {
   background: #fff;
-  border-radius: 8px;
+  border-radius: 2px;
   padding: 30px;
 }
 
 .banner-section {
   background: #fff;
-  border-radius: 8px;
+  border-radius: 2px;
 }
 
 .welcome-content {
@@ -305,14 +292,24 @@ onMounted(() => {
 .features-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  padding: 20px 0 0 0;
+  gap: 10px;
+  padding: 10px 0 0 0;
 }
 
-.feature-card,
+.feature-card {
+  background: #fff;
+  border-radius: 2px;
+ 
+    position: relative;
+  background-image: url('@/assets/image/Nahida.png');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  border-radius: 2px;
+}
 .tech-stack-card {
   background: #fff;
-  border-radius: 8px;
+  border-radius: 2px;
   padding: 24px;
 }
 
