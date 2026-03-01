@@ -22,6 +22,6 @@ const toggleCollapse = () => {
 
 <style>
 .expand-button {
-    margin-right: 16px;
+    margin:0 10px;
 }
 </style>
