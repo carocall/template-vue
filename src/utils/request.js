@@ -1,7 +1,7 @@
 //导入axios
 import axios from "axios";
 import { ElMessage } from "element-plus";
-import { useUserStore } from "@/store/user";
+import { useUserStore } from "@/stores/user";
 import { useRouter } from "vue-router";
 
 const httpInstance = axios.create({
@@ -32,15 +32,17 @@ httpInstance.interceptors.response.use(
         const { data } = res
         //判断状态码
         //成功的逻辑
-        if (data.code === 200) {
+        //TODO这里是状态码为1代表成功,需要根据需求去改
+        if (data.code === 1) {
             return data
         }
         //失败的逻辑
         else{
             ElMessage({
                 target: 'warning',
-                message: data.message,
+                message: data.msg,
             })
+            return Promise.reject(data.msg)
         }
     },
     e => {
@@ -49,7 +51,7 @@ httpInstance.interceptors.response.use(
         //统一错误处理
         ElMessage({
             target: 'warning',
-            message: e.response.data.message,
+            message: e.response.data.msg,
         })
         //处理401
         if (e.response.status === 401) {
