@@ -1,4 +1,4 @@
-import httpInstance from '@/utils/request'
+import httpInstance from "@/utils/request.js";
 
 export const LoginAPI =({account,password })=> {
    return httpInstance({
