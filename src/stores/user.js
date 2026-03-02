@@ -7,8 +7,8 @@ export const useUserStore = defineStore('user', () => {
     const userInfo = ref({})
 
 
-    const userLogin = async ({account, password}) => {
-        const res = await LoginAPI({account, password})
+    const userLogin = async ({username, password}) => {
+        const res = await LoginAPI({username, password})
         userInfo.value = res.result
     }
 
@@ -18,7 +18,7 @@ export const useUserStore = defineStore('user', () => {
 
     return{
         userInfo,
-        getUserInfo,
+        userLogin,
         cleanUserInfo,
     }
 },{
