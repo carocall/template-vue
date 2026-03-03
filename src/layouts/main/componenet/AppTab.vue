@@ -2,51 +2,29 @@
 import {ref, watch, onMounted} from 'vue'
 import {useRoute, useRouter} from 'vue-router'
 import {Close} from "@element-plus/icons-vue";
+import { useTabStore } from '@/stores/tab'
 
 const route = useRoute()
 const router = useRouter()
+const tabStore = useTabStore()
 
-const activeTab = ref('')
 const tabsContainer = ref(null)
 
-const tabs = ref([
-    {name: '首页', id: '/', path: '/'}
-])
-
 const handleTabClick = (tab) => {
-    activeTab.value = tab.name
+    tabStore.setActiveTab(tab.name)
     router.push(tab.path)
 }
 
 const handleClose = (tabId, event) => {
     event.stopPropagation()
-    if (tabs.value.length <= 1) return
-    
-    const index = tabs.value.findIndex(tab => tab.id === tabId)
-    if (index > -1) {
-        const closedTab = tabs.value[index]
-        tabs.value.splice(index, 1)
-        if (tabs.value.length > 0 && activeTab.value === closedTab.name) {
-            const newActiveTab = tabs.value[0]
-            activeTab.value = newActiveTab.name
-            router.push(newActiveTab.path)
-        }
+    const newActiveTab = tabStore.closeTab(tabId)
+    if (newActiveTab) {
+        router.push(newActiveTab.path)
     }
 }
 
 const addTab = (routeItem) => {
-    const title = routeItem.meta?.title || routeItem.name || '未命名'
-    const path = routeItem.path
-    
-    const existingTab = tabs.value.find(tab => tab.path === path)
-    if (!existingTab) {
-        tabs.value.push({
-            name: title,
-            id: path,
-            path: path
-        })
-    }
-    activeTab.value = title
+    tabStore.addTab(routeItem)
 }
 
 const handleWheel = (event) => {
@@ -68,15 +46,15 @@ onMounted(() => {
 <template>
     <div ref="tabsContainer" class="custom-tabs" @wheel="handleWheel">
         <div
-            v-for="tab in tabs"
+            v-for="tab in tabStore.tabs"
             :key="tab.id"
             class="tab-item"
-            :class="{ active: activeTab === tab.name }"
+            :class="{ active: tabStore.activeTab === tab.name }"
             @click="handleTabClick(tab)"
         >
             <span class="tab-name">{{ tab.name }}</span>
             <span 
-                v-if="tabs.length > 1" 
+                v-if="tabStore.tabs.length > 1" 
                 class="tab-close" 
                 @click="handleClose(tab.id, $event)"
             >
