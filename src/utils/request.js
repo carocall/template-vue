@@ -2,7 +2,7 @@
 import axios from "axios";
 import { ElMessage } from "element-plus";
 import { useUserStore } from "@/stores/user";
-import { useRouter } from "vue-router";
+import router from "@/router";
 
 const httpInstance = axios.create({
     baseURL: 'localhost:8080',
@@ -18,7 +18,7 @@ httpInstance.interceptors.request.use(config => {
     const userStore = useUserStore()
     const token = userStore.userInfo.token
     if (token) {
-        //按照后端的要求拼接token数据
+        //TODO按照后端的要求拼接token数据,这里需要换名称和内容
         config.headers.Authorization = `Bearer ${token}`
     }
 
@@ -37,7 +37,7 @@ httpInstance.interceptors.response.use(
             return data
         }
         //失败的逻辑
-        else{
+        else {
             ElMessage({
                 target: 'warning',
                 message: data.msg,
@@ -46,17 +46,23 @@ httpInstance.interceptors.response.use(
         }
     },
     e => {
-        const router = useRouter();
+
         const userStore = useUserStore()
         //统一错误处理
-        ElMessage({
-            target: 'warning',
-            message: e.response.data.msg,
-        })
         //处理401
         if (e.response.status === 401) {
             userStore.cleanUserInfo()
             router.push('/login')
+            ElMessage({
+                target: 'warning',
+                message: '登录过期,请重新登录',
+            })
+        }else{
+            //处理其他错误
+            ElMessage({
+                target: 'warning',
+                message: e.response.data.error,
+            })
         }
         return Promise.reject(e)
     }
