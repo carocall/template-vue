@@ -114,6 +114,11 @@ const total = ref(22);
 
 
 <style scoped>
+.el-form-item{
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
 .user-manage-container {
   background: #fff;
 }
