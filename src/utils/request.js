@@ -19,7 +19,7 @@ httpInstance.interceptors.request.use(config => {
     const token = userStore.userInfo.token
     if (token) {
         //TODO按照后端的要求拼接token数据,这里需要换名称和内容
-        config.headers.Authorization = `Bearer ${token}`
+        config.headers.authorization = `${token}`
     }
 
 
@@ -49,19 +49,25 @@ httpInstance.interceptors.response.use(
 
         const userStore = useUserStore()
         //统一错误处理
-        //处理401
-        if (e.response.status === 401) {
+         //处理401
+        if (e.response && e.response.status === 401) {
             userStore.cleanUserInfo()
             router.push('/login')
             ElMessage({
                 target: 'warning',
                 message: '登录过期,请重新登录',
             })
-        }else{
-            //处理其他错误
+        }else if (e.response) {
+            //处理其他有响应的错误
             ElMessage({
                 target: 'warning',
                 message: e.response.data.error,
+            })
+        }else{
+            //处理无响应错误（网络错误、超时等）
+            ElMessage({
+                target: 'error',
+                message: '网络错误，请检查网络连接',
             })
         }
         return Promise.reject(e)
