@@ -5,7 +5,7 @@ import { useUserStore } from "@/stores/user";
 import router from "@/router";
 
 const httpInstance = axios.create({
-    baseURL: 'localhost:8080',
+    baseURL: 'http://localhost:8080',
     timeOut: 5000
 })
 
