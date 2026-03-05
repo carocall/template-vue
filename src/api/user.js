@@ -1,11 +1,11 @@
 import httpInstance from "@/utils/request.js";
 
-export const LoginAPI =({account,password })=> {
+export const LoginAPI =({username,password })=> {
    return httpInstance({
         url: "/login",
         method: "POST",
         data: {
-            account,
+            username,
             password
         }
     });
